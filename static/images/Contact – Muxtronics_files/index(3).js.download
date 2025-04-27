@@ -1,0 +1,21 @@
+jQuery('document').ready(function($){
+
+	$("body").on("click",".webinane-el-menu-toggle",function(){
+		$(this).toggleClass("webinane-el-active");
+	});
+
+	$("body").on("click",".webinane-el-nav-menu--dropdown .menu-item.menu-item-has-children",function(e){
+		e.preventDefault();
+		$(this).children(".sub-menu").toggleClass("active");
+	});
+
+	// // Sermon Player
+	// if( $('.dial').length) {
+	// 	$(".dial").knob({
+	// 	  'format' : function (value) {
+	// 	     return value + '%';
+	// 	  }
+	// 	});
+	// }
+
+})

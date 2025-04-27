@@ -1,0 +1,17 @@
+@media (max-width:1024px) {
+   .webinane-el-nav-menu--dropdown-tablet .webinane-el-nav-menu--main {
+      display: none;
+   }
+   .webinane-el-nav-menu--dropdown-tablet .webinane-el-menu-toggle {
+      display: flex;
+   }
+
+}
+@media (max-width: 768px) {
+   .webinane-el-nav-menu--dropdown-mobile .webinane-el-nav-menu--main {
+      display: none;
+   }
+   .webinane-el-nav-menu--dropdown-mobile .webinane-el-menu-toggle {
+      display: flex;
+   }
+}

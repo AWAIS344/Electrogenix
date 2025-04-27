@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Home - Electrogenix
+
+{% endblock title %}
+
+{% block content %}
+
+
+
+<div class="pic">
+    <img src="{%static 'images/theme.JPG'%} " alt="Theme Image">
+</div>
+
+<div class="comp">
+    <ul class="checklist">
+        <li>Innovative R&D Solutions</li>
+        <li>SMD Assembly</li>
+        <li>Disp Assembly</li>
+        <li>Electronics Solutions</li>
+        <li>Electronic Product Design</li>
+        <li>Industrial Electronic Solutions</li>
+        <li>Electro-Mechanical Products</li>
+    </ul>
+    <div class="pic1">
+        <img src="{% static 'images/company1.jpg' %}  " alt="Company Image 1">
+    </div>
+    <div class="pic1">
+        <img src= "{% static 'images/pcb.jpg' %}" alt="PCB Image">
+    </div>
+</div>
+
+<div class="tes">
+    <div class="tes1">
+        <h1>All Products Available Here</h1>
+        <ul id="list">
+            <li>10KW with WAPDA sharing</li>
+            <li>10KW without WAPDA sharing</li>
+            <li>7KW without WAPDA sharing</li>
+            <li>5KW without WAPDA sharing</li>
+            <li>1.10 Booster Panel Supported</li>
+            <li>MPPT</li>
+            <li>Charge Controller</li>
+            <li>Inverter LCD Screen</li>
+        </ul>
+    </div>
+    <div class="pic2">
+        <img src="{% static 'images/pv7 GS invertor.jpg' %} " alt="PV 10 GS Inverter">
+    </div>
+    <div class="pic2">
+        <img src= "{% static 'images/PV 10 G Invertor.jpg' %} " alt="PV5 Inverter">
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,25 @@
+jQuery(document).ready(function ($) {
+	const slickCarousel = document.querySelectorAll('[data-slickCarousel]');
+	const responsiveSlickCarousel = document.querySelectorAll('[data-responsive-slickCarousel]');
+	// When Carousel exists
+	if (slickCarousel) {
+
+		$(slickCarousel).each((indx, el) => {
+			var options = $(el).data('options');
+
+			$(el).slick(options);
+		})
+	}
+
+
+	var width = window.innerWidth;
+	if (width < 900) {
+		// Responsive Carousel
+		if (responsiveSlickCarousel) {
+			$(responsiveSlickCarousel).each((indx, el) => {
+				var options = $(el).data('options');
+				$(el).slick(options);
+			})
+		}
+	}
+});

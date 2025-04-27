@@ -1,0 +1,21 @@
+.webinane_social_share {
+    display: inline-block;
+}
+.webinane_social_share a {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:5px;
+    margin-top:7px;
+}
+.webinane_social_share.rounded a {
+    border-radius: 8%;
+}
+.webinane_social_share.square a{
+    border-radius: 0%;
+}
+.webinane_social_share.circle a{
+    border-radius: 50%;
+}

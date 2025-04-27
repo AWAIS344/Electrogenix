@@ -1,0 +1,13 @@
+jQuery(document).ready(function($){
+
+	// Tilt Mouseover Effect
+	var tilt = $('.tilt_yes');
+	if ( tilt.length ) {
+		$('.tilt_yes').tilt({
+			maxGlare:  		1,
+			maxTilt:        3,
+			transition:     true,  
+		});
+	}
+
+});

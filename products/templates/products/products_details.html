@@ -1,0 +1,471 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+
+Product - {{invertor.name}}
+
+{% endblock title %}
+
+
+{% block extra_css %}
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: orangered;
+        padding: 0 20px;
+        height: 70px;
+    }
+    
+    .text {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        color: #fff;
+    }
+    
+    .text ul {
+        display: flex;
+        gap: 10px;
+        list-style: none;
+    }
+    
+    .follow-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .follow-container h5 {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+    }
+    
+    .follow-container img {
+        border-radius: 0.6rem;
+        width: 18px;  
+        height: 18px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .follow-container img:hover {
+        transform: scale(1.2);
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000;
+        padding: 0 20px;
+        height: 80px;
+    }
+    
+    .logo img{
+        border-radius: 1.8rem;
+        width: 58px;  
+        height: 58px;
+    
+    }
+    
+    .menu ul {
+        list-style: none;
+        display: flex;
+    }
+    
+    .menu ul li {
+        position: relative;
+        margin: 0 15px;
+    }
+    
+    .menu ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+    
+    .menu ul li a:hover {
+        color: blue
+    }
+    
+    /* Dropdown styles */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #333;
+        display: none; /* Initially hidden */
+        width: 200px; /* Adjust width as needed */
+    }
+    
+    .dropdown:hover ul {
+        display: flex;
+        flex-direction: column; /* Ensures vertical stacking */
+    }
+    
+    .dropdown ul li {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    
+    .dropdown ul li a {
+        color: #fff;
+        font-size: 13px;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .dropdown ul li a:hover {
+        background-color: #444;
+        color: blue;
+    }
+    .productcard{
+            max-width: 18em;
+            padding: 3em;
+            background-color: #fff;
+            box-shadow: 0px 5px 5px black;
+            margin: auto;
+            margin-top: 20px;
+           }
+           .productcard img{
+            max-width: 100%;
+           }
+    
+           .productcard button{
+            background-color: orangered;
+            color: #fff;
+            width: 85px;
+            height: 25px;
+            margin-left: 53px;
+            cursor: pointer;
+            margin-top: 10px;
+           }
+           button:hover{
+            transform: scale(1.3);
+           }
+           .productcard span{
+            padding-left: 65px;
+           }
+           
+    
+    .pic img{
+        width: 100%;
+        height: 430px;
+    }
+    .feature{
+        margin-left: 30px;
+        padding: 20px;
+        margin-top: 50px;
+    }
+     p{
+        margin-left: 50px;
+        margin-top: 20px;
+        margin-right: 100px;
+        
+    }
+    .feature li{
+        margin-bottom: 25px;
+        margin-left: 25px;
+    }
+    .feature ul{
+        margin-top: 30px;
+    }
+    
+    .frif img{
+        width: 90%;
+        height: 300px;
+        margin-right: 100px;
+        margin-top: 20px;
+    }
+    .check{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: 600px;
+    
+    }
+    .chck {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .chck li {
+        position: relative;
+        padding-left: 30px; /* Space for icon */
+        margin-bottom: 10px; /* Space between items */
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        margin-top: 30px;
+        margin-left: 12px;
+    }
+    
+    .chck li::before {
+        content: "✔"; /* Checkmark symbol */
+        position: absolute;
+        left: 0;
+        color: orange;
+        font-weight: bold;
+    }
+    .doo p{
+        margin-left: 50px;
+    }
+    .fow p{
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+    .tap {
+        margin-left: 50px;
+        margin-top: 50px;
+    
+    }
+    h1{
+        margin-left: 90px;
+    }
+    h3{
+        margin-left: 90px;
+        margin-top: 20px;
+    }
+    .check{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: 600px;
+    
+    }
+    .side {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .site li {
+        list-style: none;
+        position: relative;
+        padding-left: 40px; /* Space for icon */
+        margin-bottom: 10px; /* Space between items */
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        margin-top: 30px;
+        margin-left: 50px;
+    }
+    
+    .site li::before {
+        content: "✔"; /* Checkmark symbol */
+        position: absolute;
+        left: 0;
+        color: orange;
+        font-weight: bold;
+    }
+    .apt
+    {
+        margin-left: 50px;
+        padding: 50px;
+    }
+    .tap {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .foot{
+        width: 100%;
+        height: 300px;
+        background-color: orangered;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+    .subfoot{
+      padding-left: 40px;
+      padding-top: 40px;
+    }
+    .links {
+        padding-left: 190px;
+        padding-top: 40px;
+    }
+    .links a {
+        color: white;
+        display: block;
+        font-size: 20px;
+       
+    }
+    .links a:hover{
+        color: blue;
+        text-decoration: none;
+    }
+    
+    
+    
+        
+    
+    
+    
+    
+        </style>
+
+{% endblock extra_css %}
+
+{% block content %}
+
+
+
+<div class="pic">
+    <img src="{% static 'images/PV 5 CANT.JPG' %} ">
+</div>
+
+<div class="productcard">
+    <img src="{{invertor.image.url}}">
+    <div>
+        <span>RS:{{invertor.price}}</span>
+        <a href="Registration form.html"><button>Buy Now</button></a>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="feature">
+        <p>Our Inverters are equipped with ESP32 Based Program, which has advanced features and all essential protection. All our Inverters are made with utmost precision and excellent quality components.</p>
+       <div class="check">
+        <ul class="chck">
+            <li>Short Circuit Protection</li>
+            <li>Overload Protection</li>
+            <li>Low Output Voltage Protection</li>
+            <li>Buzzer Alarm</li>
+            <li>Fault Auto Recovery</li>
+            <li>Fixed Frequency of 50 Hz.
+            </li>
+        </ul>
+        <div class="frif">
+            <img src="image/pv5Invertor.jpeg">
+
+        </div>
+    </div>
+        </div>
+        </div>
+        <div class="feature">
+            <p>Advanced Solar Inverter: Efficient, Reliable, and Safe Power Management Experience the future of solar power with our state-of-the-art solar inverter, designed to deliver optimal performance, enhanced protection, and user-friendly features.</p>
+        </div>
+
+        <h1>Key Features:</h1>
+        <div class="side">
+            <ul class="site">
+                <li>Stable Performance at 50Hz</li>
+                <li>Ensure consistent, reliable power conversion with a fixed frequency of 50Hz for smooth operation.</li>
+            </ul>
+        </div>
+
+        <h3>Built-in Buzzer Alerts:</h3>
+        <div class="side">
+            <ul class="site">
+                <li>Stay informed with audible alerts. The integrated buzzer notifies you during startup and any error conditions.</li>
+            </ul>
+        </div>
+
+        <h3>Comprehensive Protection:</h3>
+        <div class="side">
+            <ul class="site">
+                <li>Short Circuit Protection: Safeguard your system from potential damage due to electrical faults.</li>
+                <li>Overload Protection: Prevents overheating and ensures safe operation under heavy load.</li>
+                <li>Low Voltage Protection: Automatically cuts off power and sounds a buzzer if AC voltage drops below 180V.
+                </li>
+            </ul>
+        </div>
+
+        <h3>Auto Fault Recovery:</h3>
+        <div class="side">
+            <ul class="site">
+                <li>Intelligent recovery mechanism with 3 automatic retries, ensuring the system stabilizes before resuming normal operation.
+                </li>
+            </ul>
+        </div>
+
+        <h3>Customizable Recovery Mode:
+        </h3>
+        <div class="side">
+            <ul class="site">
+            <li>Adjust the low PV error value to suit your specific needs, allowing for maximum system flexibility.
+            </li>
+            </ul>
+        </div>
+
+        <div class="fow">
+            <p>Ensure smoother transitions and enhanced equipment longevity with soft start functionality, available in:</p>
+        </div>
+
+        <div class="side">
+            <ul class="site">
+                <li>Fast</li>
+                <li>Slow</li>
+                <li>Disable (Optional)</li>
+                <li>Adjustable Output Voltage</li>
+                <li>Tailor the output voltage to match your energy requirements, offering versatility for different setups</li>
+
+                
+            </ul>
+
+        </div>
+        <h3>Precise PV Current Control:</h3>
+        <div class="side">
+            <ul class="site">
+                <li>Take full control of your photovoltaic string by adjusting the PV current to optimize performance and efficiency.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="fow">
+            <p>This solar inverter is designed to meet the challenges of modern energy needs, delivering reliable performance, full protection, and unmatched flexibility. Whether you're powering a home, office, or industrial setup, our inverter guarantees smooth and efficient energy management.
+                Explore sustainable energy with confidence.</p>
+        </div>
+
+        <div class="tap">
+            <img src="image/table5.jpeg">
+        </div>
+
+        <div class="pat">
+            <div class="apt">
+            <img src="image/5one.jpg">
+            <img src="image/5two.jpg">
+            <img src="image/5three.jpg">
+            <img src="image/5four.jpg">
+            </div>
+        </div>
+
+{% endblock content %}
